@@ -1,0 +1,12 @@
+[package]
+name = "gallery"
+version = "0.1.0"
+authors = ["Vivian Lim <vivvnlim@gmail.com>"]
+build = "src/build.rs"
+
+[build-dependencies]
+ructe = { version = "0.4.0", features = ["sass", "mime03"] }
+
+[dependencies]
+ructe = "0.4.6"
+mime = "0.3.0"

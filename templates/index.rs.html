@@ -1,0 +1,10 @@
+@use handlers::RenderedFile;
+@use templates::page_base;
+
+@(content_dir: &str, output_dir: &str, files: &Vec<RenderedFile>)
+
+@:page_base("index", {
+  @for file in files {
+    <p><a href="../@output_dir/@file.file.html_name">@file.file.name</a></p>
+  }
+})

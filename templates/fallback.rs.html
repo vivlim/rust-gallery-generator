@@ -1,0 +1,9 @@
+@use files::File;
+@use templates::page_base;
+
+@(file: &File)
+
+@:page_base("fallback page", {
+  <p>i don't know how to show off this file format!</p>
+  <p>@file.path</p>
+})

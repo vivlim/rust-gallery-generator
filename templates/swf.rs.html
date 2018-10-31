@@ -1,0 +1,8 @@
+@use files::File;
+@use templates::page_base;
+
+@(file: &File)
+
+@:page_base(&file.name, {
+  <object width="1024" height="768" data="../@file.path"></object>
+})
