@@ -8,7 +8,7 @@ use handlers::RenderedFile;
 
 fn main() {
     println!("Hello, world!");
-    let f = files::load_files_in_directory(&"./testdata".to_string());
+    let f = files::load_files_in_directory(&"./input".to_string());
 
     let output_dir = Path::new("./output");
     create_dir_all(output_dir);
@@ -16,7 +16,7 @@ fn main() {
     let handled_files: Vec<RenderedFile> = f.iter().map(|f| handlers::render_file(f)).collect();
 
     let mut out_file = File::create(output_dir.join("index.html")).unwrap();
-    templates::index(&mut out_file, "testdata", "output", &handled_files);
+    templates::index(&mut out_file, "input", "output", &handled_files);
 
     for handled_file in handled_files {
         println!("{}: {}", handled_file.file.path, handled_file.output);
